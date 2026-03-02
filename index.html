@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matthew Eric Myomin | Creative Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#0f0c29;
+    --bg2:#302b63;
+    --bg3:#24243e;
+    --accent:#8e2de2;
+    --accent2:#4a00e0;
+    --glass:rgba(255,255,255,0.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Outfit',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(135deg,var(--bg),var(--bg2),var(--bg3));
+    color:white;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    width:100%;
+    padding:20px 60px;
+    display:flex;
+    justify-content:space-between;
+    backdrop-filter:blur(20px);
+    background:rgba(0,0,0,0.3);
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:var(--accent);
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:70px;
+    font-weight:800;
+    background:linear-gradient(90deg,#8e2de2,#4a00e0);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.typing{
+    margin-top:15px;
+    font-size:22px;
+    height:30px;
+}
+
+.btn{
+    margin-top:30px;
+    padding:12px 30px;
+    border-radius:30px;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+    background:linear-gradient(90deg,#8e2de2,#4a00e0);
+    color:white;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 30px #8e2de2;
+}
+
+/* SECTION */
+section{
+    padding:120px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:60px;
+}
+
+/* CARD */
+.card{
+    background:var(--glass);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.2);
+    padding:30px;
+    border-radius:20px;
+    margin-bottom:30px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 40px rgba(142,45,226,0.6);
+}
+
+/* SKILL BAR */
+.skill-bar{
+    background:#333;
+    height:8px;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:5px;
+    margin-bottom:15px;
+}
+
+.skill-fill{
+    height:8px;
+    background:linear-gradient(90deg,#8e2de2,#4a00e0);
+    border-radius:10px;
+    width:0;
+}
+
+/* MODAL */
+.modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-content{
+    background:white;
+    color:black;
+    padding:40px;
+    border-radius:15px;
+    width:300px;
+    text-align:center;
+}
+
+.close{
+    cursor:pointer;
+    margin-top:20px;
+    padding:8px 20px;
+    background:#8e2de2;
+    color:white;
+    border:none;
+    border-radius:20px;
+}
+
+/* FLOATING GLOW */
+.blob{
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:radial-gradient(circle,#8e2de2,transparent);
+    filter:blur(120px);
+    animation:float 10s infinite alternate;
+    z-index:-1;
+}
+
+@keyframes float{
+    from{transform:translateY(-50px);}
+    to{transform:translateY(50px);}
+}
+
+/* DARK MODE */
+.dark{
+    background:black;
+}
+</style>
+</head>
+<body>
+
+<div class="blob"></div>
+
+<nav>
+    <div><strong>MEM</strong></div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#" onclick="openModal()">Contact</a>
+        <a href="#" onclick="toggleDark()">🌙</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>Matthew Eric Myomin</h1>
+    <div class="typing" id="typing"></div>
+    <button class="btn" onclick="scrollToAbout()">Explore More</button>
+</div>
+
+<section id="about">
+    <div class="section-title">About Me</div>
+    <div class="card">
+        <p>
+            I am a first-year Information Systems student at Brawijaya University 
+            with a strong interest in technology, leadership, and digital system development.
+        </p><br>
+        <p>
+            Throughout my academic and organizational journey, I consistently step into 
+            leadership roles, collaborate with diverse teams, and manage real-world projects.
+        </p><br>
+        <p>
+            My goal is to become a professional who understands systems both technically 
+            and strategically — able to analyze problems, design structured solutions, 
+            and lead teams toward impactful execution.
+        </p>
+    </div>
+</section>
+
+<section id="experience">
+    <div class="section-title">Experience</div>
+
+    <div class="card">
+        <h3>Junior Staff – SGE FILKOM UB</h3>
+        <span>Aug 2025 – Dec 2025</span>
+        <br><br>
+        <ul>
+            <li>Served in Human Capital Bureau.</li>
+            <li>Chief Executive of Human Capital Ministry Farewell.</li>
+            <li>Led cross-division coordination and logistics planning.</li>
+            <li>Managed event timeline and risk handling.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>DDM Staff – IkaSatu Malang</h3>
+        <span>Dec 2025 – Present</span>
+        <br><br>
+        <ul>
+            <li>Produced Anniversary Announcement & Recap Videos.</li>
+            <li>Master of Ceremony for Anniversary Event.</li>
+            <li>Produced soft skill campaign video.</li>
+            <li>Handled digital branding and content planning.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="skills">
+    <div class="section-title">Skills</div>
+
+    <div class="card">
+        <h3>Technical Skills</h3>
+
+        Java Programming
+        <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+
+        Python Programming
+        <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
+
+        Video Editing
+        <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
+
+        Public Speaking
+        <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+    </div>
+
+    <div class="card">
+        <h3>Soft Skills</h3>
+        <ul>
+            <li>Leadership & Team Coordination</li>
+            <li>Strategic Thinking</li>
+            <li>Problem Solving</li>
+            <li>Communication</li>
+            <li>Time Management</li>
+        </ul>
+    </div>
+</section>
+
+<div class="modal" id="contactModal">
+    <div class="modal-content">
+        <h3>Contact Me</h3>
+        <p>Email: matthewericmyomin12@gmail.com</p>
+        <p>Phone: +6282180311093</p>
+        <button class="close" onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<script>
+// Typing Effect
+const words=["Information System Student","Tech Enthusiast","Future System Analyst"];
+let i=0,j=0,current="",isDeleting=false;
+function type(){
+    if(i<words.length){
+        if(!isDeleting && j<=words[i].length){
+            current=words[i].substring(0,j++);
+        } else if(isDeleting && j>=0){
+            current=words[i].substring(0,j--);
+        }
+        document.getElementById("typing").innerHTML=current;
+        if(j==words[i].length) isDeleting=true;
+        if(j==0 && isDeleting){ isDeleting=false; i++; }
+    } else i=0;
+}
+setInterval(type,100);
+
+// Scroll
+function scrollToAbout(){
+    document.getElementById("about").scrollIntoView({behavior:"smooth"});
+}
+
+// Animate skill bars on scroll
+window.addEventListener("scroll",()=>{
+    document.querySelectorAll(".skill-fill").forEach(bar=>{
+        if(bar.getBoundingClientRect().top < window.innerHeight){
+            bar.style.width=bar.getAttribute("data-width");
+        }
+    });
+});
+
+// Modal
+function openModal(){
+    document.getElementById("contactModal").style.display="flex";
+}
+function closeModal(){
+    document.getElementById("contactModal").style.display="none";
+}
+
+// Dark mode
+function toggleDark(){
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
